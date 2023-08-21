@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  mysql:
+    image: mysql:debian
+    environment:
+      - MYSQL_USER=perfex
+      - MYSQL_PASSWORD=qwerty
+      - MYSQL_DATABASE=perfex
+      - MYSQL_ROOT_PASSWORD=root
+  perfex:
+    image: hichamelb/perfex-apache:latest
+    ports:
+      - 8080:80
+    volumes:
+      - perfex_config:/var/www/html
+volumes:
+  perfex_config:
