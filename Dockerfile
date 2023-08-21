@@ -24,10 +24,6 @@ COPY ./config.sh /var/www/html/
 
 RUN chmod +x /var/www/html/config.sh
 
-CMD [ "apache2-foreground" ]
-
 ENTRYPOINT [ "/var/www/html/config.sh" ]
 
 EXPOSE 80
-
-#CMD [ "bash" ]
