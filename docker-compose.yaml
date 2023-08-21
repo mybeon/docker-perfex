@@ -7,6 +7,8 @@ services:
       - MYSQL_PASSWORD=qwerty
       - MYSQL_DATABASE=perfex
       - MYSQL_ROOT_PASSWORD=root
+    volumes:
+      - perfex_mysql:/var/lib/mysql
   perfex:
     image: hichamelb/perfex-apache:latest
     ports:
@@ -15,3 +17,4 @@ services:
       - perfex_config:/var/www/html
 volumes:
   perfex_config:
+  perfex_mysql:
